@@ -51,10 +51,9 @@ private
     @turn -= 1
   end
 
-  def matches_to_nil(guesser)
-    matches = guesser.each_index.select{|i| guesser[i] == (computer_guess - 1).to_s}
+  def matches_to_nil(guesser, matches)
     puts "matches length: #{matches.length}"
-      while matches.length > 0 do
+      while guesser.include?((computer_guess - 1).to_s)
         matches.each_index do |i|
           puts "matches length: #{matches.length}"
           puts "index: #{i}"
@@ -70,24 +69,21 @@ private
     correct = ""
     partial = ""
     clues = ""
+    matches = []
     unique_guess = guesser.uniq
+    
     
     guesser.each_with_index do |num, index|
       guesser.each_with_index do |num, index2|
-        if guesser[index2] == coder.code[index2]
-          puts "Correct ran"
+        if guesser[index2] == coder.code[index2] && matches.include?(guesser[index2]) == false
           correct << "#{clue('correct')} "
-          
+          matches << guesser[index2]
           @clue_count += 1        
-          puts "guesser correct: #{guesser}"
         end
       end
-      matches_to_nil(computer.guess)
-        if coder.code.include?(guesser[index])
-          puts "Partial ran"
+        if coder.code.include?(guesser[index]) && matches.include?(guesser[index])== false
           partial << "#{clue('partial')} "   
-          @clue_count += 1
-              puts "guesser partial: #{guesser}"   
+          @clue_count += 1  
       end
     end
 
@@ -107,19 +103,18 @@ private
 
   def computer_phase1
     number_string = computer_guess.to_s
-    puts "clue count: #{clue_count}"
 
       if clue_count == 0
         computer.guess.each_with_index do |num, index|
           computer.guess[index] = number_string
         end
-      elsif clue_count > 1
+      elsif clue_count > 0
         computer.guess.each_with_index do |num, index|
           computer.guess[index] = number_string
         end
         all_clues[guess_index] = (computer_guess - 1).to_s
-        @guess_index += 1      
-    end
+        @guess_index += 1   
+      end
 
     @computer_guess += 1
     @clue_count = 0
@@ -131,7 +126,7 @@ private
     if player.guess == computer.code
       puts 'GAME OVER! You Win!'
       @game_over = true
-    elsif all_clues == player.code
+    elsif all_clues == player.code && all_clues != []
       puts 'GAME OVER! The computer cracked the code!'
       @game_over = true
     elsif turn == 0
@@ -145,7 +140,9 @@ private
     new_turn
     p computer.code
     player.get_player_guess
-    display_guess_clues(player, computer)
+    display_guess_clues(player.guess, computer)
+    puts "all_clues: #{all_clues}"
+    puts "playercode: #{player.code}"
     game_status
   end
 
@@ -158,14 +155,12 @@ private
       game_status
       @turn -= 1
     end
-
       puts "Computer Turns Remaining: #{turn}"
       puts "phase 2"
+      @all_clues.shuffle!
       display_guess_clues(all_clues, player)
-      all_clues.shuffle
       game_status
       @turn -= 1
-
   end
 end
 
