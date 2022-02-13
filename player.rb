@@ -35,7 +35,3 @@ class Player
     end
   end
 end
-
-# player = Player.new
-# player.get_player_code
-# puts player.guess_to_color(player.code)
