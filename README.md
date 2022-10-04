@@ -10,7 +10,7 @@ This was my second attempt at using OOP. These games were still small enough tha
 <p float = 'left' >
   <figure>
     <figcaption>Original Game</figcaption>
-    <img src="mastermind_real.jpg" alt="real mastermind game" width="250" height="350">
+    <img src="mastermind_real.jpg" alt="real mastermind game" width="300" height="350">
   </figure>
 </p>
 
