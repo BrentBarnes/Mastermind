@@ -1,4 +1,20 @@
-# mastermind
+# Mastermind
+
+Building Mastermind was an exercise in Object Oriented Programming.
+
+This was my second attempt at using OOP. These games were still small enough that I could get away with using large and cumbersome classes. My OOP improves much more throughout the process of building Chess. I left my reflections after completing below that show my OOP skepticism.
+
+### Background
+
+![Mastermind Real Picture](mastermind_real.jpg)
+
+Mastermind is a game where the computer sets 4 different colors in a specific order as a code. You have to try to guess which colors are used, and you must also get the colors in the correct order that the computer initially set them up in. If you get a white clue, it means you have the correct color, but it's in the wrong position. If you get a red clue, that means you have one correct color in the correct position.
+
+### Video Demo
+
+![Mastermind Video Demo](mastermind.gif)
+
+### Reflections After Completion
 
 Mastermind was a long-winded success!
 
