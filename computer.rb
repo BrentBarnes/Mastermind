@@ -20,8 +20,4 @@ class Computer
       end
     end
   end
-
-  def guess_phase_1
-    
-  end
 end
