@@ -7,7 +7,12 @@ This was my second attempt at using OOP. These games were still small enough tha
 
 ### Background
 
-![Mastermind Real Picture](mastermind_real.jpg)
+<p float = 'left' >
+  <figure>
+    <figcaption>Original Game</figcaption>
+    <img src="mastermind_real.jpg" alt="real mastermind game" width="600" height="300">
+  </figure>
+</p>
 
 Mastermind is a game where the computer sets 4 different colors in a specific order as a code. You have to try to guess which colors are used, and you must also get the colors in the correct order that the computer initially set them up in. If you get a white clue, it means you have the correct color, but it's in the wrong position. If you get a red clue, that means you have one correct color in the correct position.
 
