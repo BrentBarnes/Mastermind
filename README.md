@@ -20,7 +20,7 @@ Mastermind is a game where the computer sets 4 different colors in a specific or
 
 ![Mastermind Video Demo](mastermind.gif)
 
-Click here for a [Live Demo](https://replit.com/@brenttbarness/Mastermind-Ruby-CLI-Game?v=1)
+<strong>Click here for a [Live Demo](https://replit.com/@brenttbarness/Mastermind-Ruby-CLI-Game?v=1)!</strong>
 
 ### Reflections After Completion
 
